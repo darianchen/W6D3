@@ -9,7 +9,9 @@ class UsersController < ApplicationController
 
 
      def create
-         render json: params
+        user = User.new(params.require(:user).permit(:name, :email))
+        user.save!
+        render json: user
      end
 
     def show
