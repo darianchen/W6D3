@@ -11,7 +11,7 @@
 #
 class Artwork < ApplicationRecord
 
-    validates :title, uniqueness: { scope: :artist_id }
+    validates :title, presence: true, uniqueness: { scope: :artist_id }
     
     belongs_to  :artist,
     primary_key: :id,
@@ -21,7 +21,8 @@ class Artwork < ApplicationRecord
     has_many :artwork_share,
         primary_key: :id,
         foreign_key: :artwork_id,
-        class_name: :ArtWorkShares
+        class_name: :ArtWorkShares,
+        dependent: :destroy
 
 
     has_many :artwork_shares,
