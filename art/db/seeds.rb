@@ -10,38 +10,28 @@
 #   ActiveRecord::Base.transaction do
 #     puts "Preparing #{Rails.env} environment"
   
-#     puts 'Destroying tables...'
-#     ArtworkShares.delete_all
-#     Artwork.delete_all
-#     User.delete_all
+    puts 'Destroying tables...'
+    ArtworkShares.delete_all
+    Artwork.delete_all
+    User.delete_all
     
-  
-#     puts 'Resetting id sequences...'
-#     %w(users videos comments likes).each do |table_name|
-#       ApplicationRecord.connection.reset_pk_sequence!(table_name)
-#     end
-  
     puts 'Creating seed data...'
     shawn = User.create!(
-      username: "Mike",
+      username: "shawn",
     )
   
     darian = User.create!(
-    username: "Jim",
+    username: "darian",
     )
   
     mona_lisa = Artwork.create!(
       title: "Mona Lisa",
       image_url: "www.google.com/monalisa",
-      artist_id: 2
+      artist_id: shawn.id
     )
 
     boat = Artwork.create!(
         title: "boat",
         image_url: "www.google.com/boat",
-        artist_id: 1
+        artist_id: darian.id
       )
-  
-    
-#     puts "Done with #{Rails.env} environment!"
-#   end
