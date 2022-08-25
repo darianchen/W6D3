@@ -10,10 +10,10 @@
 #   ActiveRecord::Base.transaction do
 #     puts "Preparing #{Rails.env} environment"
   
-#     puts 'Destroying tables...'
-#     ArtworkShares.delete_all
-#     Artwork.delete_all
-#     User.delete_all
+    puts 'Destroying tables...'
+    ArtworkShares.delete_all
+    Artwork.delete_all
+    User.delete_all
     
   
 #     puts 'Resetting id sequences...'
