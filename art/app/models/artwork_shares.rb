@@ -11,12 +11,10 @@
 class ArtworkShares < ApplicationRecord
 
     belongs_to :shared_artworks,
-        primary_key: :id,
         foreign_key: :artwork_id,
         class_name: :Artwork
     
     belongs_to :shared_viewers,
-        primary_key: :id,
         foreign_key: :viewer_id,
         class_name: :User
 
