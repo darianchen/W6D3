@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :create, :destroy, :show, :update]
 
+  post '/users/:user_id/artworks', to: 'users#index'
+
   # get 'users', to: 'users#index'
   # post 'users', to: 'users#create'
   # get 'users/new', to: 'users#new' 
@@ -20,6 +22,6 @@ Rails.application.routes.draw do
 
   resources :artworks, only: [:index, :create, :destroy, :show, :update]
 
-  resources :artworkshares, only: [:create, :destroy]
+  resources :artwork_shares, only: [:create, :destroy]
 
 end

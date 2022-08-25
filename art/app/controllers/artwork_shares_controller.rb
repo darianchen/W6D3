@@ -1,4 +1,4 @@
-class ArtworksSharesController < ApplicationController
+class ArtworkSharesController < ApplicationController
 
     def create
         artworkshares = ArtworkShares.new(artwork_params)
@@ -17,7 +17,7 @@ class ArtworksSharesController < ApplicationController
 
 
       def artwork_params
-        params.require(:artworkshare).permit(:artwork_id, :viewer_id)
+        params.require(:artwork_shares).permit(:artwork_id, :viewer_id)
       end
 
 end 
