@@ -9,7 +9,7 @@
 #
 class User < ApplicationRecord
 
-    validates :username, presence: true, uniqueness: true
+    validates :username, presence: true, uniqueness: { message: "Username already taken"}
     
     
     has_many :artworks,

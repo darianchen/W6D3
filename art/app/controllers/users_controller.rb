@@ -7,10 +7,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    debugger
       user = User.new(user_params)
     if user.save
-      ender json: user
+      render json: user
     else
       render json: user.errors.full_messages, status: :unprocessable_entity
     end

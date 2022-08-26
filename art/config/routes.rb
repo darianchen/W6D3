@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :users, only: [:index, :create, :destroy, :show, :update]
-
   #post '/users/:user_id/artworks', to: 'users#index'
   # get 'users', to: 'users#index'
   # post 'users', to: 'users#create'
@@ -18,8 +16,8 @@ Rails.application.routes.draw do
   # put 'users/:id', to: 'users#update'
   # delete 'users/:id', to: 'users#destroy'
 
-  resources :artworks, only: [:index, :create, :destroy, :show, :update]
-
+  resources :users, only: [:index, :create, :destroy, :show, :update]
+  resources :artworks, only: [:create, :destroy, :show, :update]
   resources :artwork_shares, only: [:create, :destroy]
 
   resources :users do
